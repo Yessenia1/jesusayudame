@@ -10,30 +10,29 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/cliente")
-
 public class ClienteController {
     @Autowired
     private ClienteService clienteService;
-
-    @GetMapping()
-    public ResponseEntity<List<Cliente>> list() {
-        return ResponseEntity.ok().body(clienteService.listar());
+    @GetMapping
+    public ResponseEntity<List<Cliente>> listar(){
+        return ResponseEntity.ok(clienteService.listar());
     }
-    @PostMapping()
-    public ResponseEntity<Cliente> save(@RequestBody Cliente cliente){
+    @PostMapping
+    public ResponseEntity<Cliente> guardar(@RequestBody Cliente cliente){
         return ResponseEntity.ok(clienteService.guardar(cliente));
     }
-    @PutMapping()
-    public ResponseEntity<Cliente> update(@RequestBody Cliente cliente){
-        return ResponseEntity.ok(clienteService.actualizar(cliente));
-    }
     @GetMapping("/{id}")
-    public ResponseEntity<Cliente> listById(@PathVariable(required = true) Integer id){
-        return ResponseEntity.ok().body(clienteService.listarPorId(id).get());
+    public  ResponseEntity<Cliente> busacarPorId(@PathVariable(required = true) Integer id){
+        return ResponseEntity.ok(clienteService.buscarPorId(id));
+    }
+    @PutMapping("/{id}")
+    public ResponseEntity<Cliente> editar(@PathVariable(required = true) Integer id, @RequestBody Cliente cliente){
+        cliente.setId(id);
+        return  ResponseEntity.ok(clienteService.editar(cliente));
     }
     @DeleteMapping("/{id}")
-    public String deleteById(@PathVariable(required = true) Integer id){
-        clienteService.eliminarPorId(id);
-        return "Eliminacion Correcta";
+    public String eliminar(@PathVariable(required = true) Integer id){
+        clienteService.eliminar(id);
+        return "Eliminacion completa";
     }
 }
