@@ -9,14 +9,22 @@
         <outputRelativeToContentRoot value="true" />
         <module name="ms-cliente" />
         <module name="ms-config-server" />
+        <module name="auth-service" />
+        <module name="ms-pedido-service" />
         <module name="ms-registry-server" />
+        <module name="ms-catalogo" />
+        <module name="ms-gateway-service" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="auth-service" options="-parameters" />
+      <module name="ms-catalogo" options="-parameters" />
       <module name="ms-cliente" options="-parameters" />
       <module name="ms-config-server" options="-parameters" />
+      <module name="ms-gateway-service" options="-parameters" />
+      <module name="ms-pedido-service" options="-parameters" />
       <module name="ms-registry-server" options="-parameters" />
     </option>
   </component>

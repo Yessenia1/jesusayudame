@@ -7,6 +7,10 @@
         <option value="$PROJECT_DIR$/ms-cliente/pom.xml" />
         <option value="$PROJECT_DIR$/ms-config-server/pom.xml" />
         <option value="$PROJECT_DIR$/ms-registry-server/pom.xml" />
+        <option value="$PROJECT_DIR$/ms-auth/pom.xml" />
+        <option value="$PROJECT_DIR$/ms-catalogo/pom.xml" />
+        <option value="$PROJECT_DIR$/ms-gateway-service/pom.xml" />
+        <option value="$PROJECT_DIR$/ms-pedido-service/pom.xml" />
       </list>
     </option>
   </component>
